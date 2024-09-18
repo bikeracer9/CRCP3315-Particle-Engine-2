@@ -14,6 +14,8 @@ import processing.core.PApplet;
 public class Main extends PApplet {
 
     Balls balls; //draws the simulation to the screen
+    Particle_Container container; //controls the particles
+
     public static void main(String[] args) { //sets up processing
         PApplet.main("com.particle_engine_2.Main");
     }
@@ -22,7 +24,8 @@ public class Main extends PApplet {
     public void settings()
     {
         size(800, 800);
-        balls = new Balls(this);
+        //balls = new Balls(this);
+        container = new Particle_Container(this);
     }
     
     /*
@@ -31,7 +34,7 @@ public class Main extends PApplet {
      */
     public void setup()
     {               
-        balls.setup(); //calls the balls from the class into the main function
+        //balls.setup(); //calls the balls from the class into the main function
     } 
 
     /*
@@ -40,7 +43,8 @@ public class Main extends PApplet {
     */
     public void draw()
     {
-        balls.draw();
+        container.draw();
+       // balls.draw();
     }
 
     /*
@@ -49,7 +53,7 @@ public class Main extends PApplet {
      */
     public void mousePressed()
     {
-        balls.mousePressed();
+       // balls.mousePressed();
     }
 
     /*
@@ -58,6 +62,6 @@ public class Main extends PApplet {
      */
     public void mouseDragged()
     {
-            balls.mouseDragged();
+            //balls.mouseDragged();
     }
 }
