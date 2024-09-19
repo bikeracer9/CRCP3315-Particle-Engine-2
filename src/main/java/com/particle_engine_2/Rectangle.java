@@ -5,7 +5,7 @@
  * This file inherits the superclass (the particle object) and draws a rectangle!
  */
 
- package com.particle_engine_2;
+ package com.particle_engine_2; //change to be a combination of a shape!
 
  import processing.core.PApplet;
  

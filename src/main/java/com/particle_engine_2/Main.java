@@ -13,7 +13,7 @@ import processing.core.PApplet;
 
 public class Main extends PApplet {
 
-    Balls balls; //draws the simulation to the screen
+    // Balls balls; //draws the simulation to the screen
     Particle_Container container; //controls the particles
 
     public static void main(String[] args) { //sets up processing

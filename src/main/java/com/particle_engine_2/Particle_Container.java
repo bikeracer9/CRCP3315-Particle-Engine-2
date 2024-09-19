@@ -15,10 +15,10 @@ public class Particle_Container {
 
     //Particle_Object particle;//testing the superclass
     //Square square; //testing the square object.
-    Rectangle rectangle; //testing the rectangle object
+    //Rectangle rectangle; //testing the rectangle object
 
     ArrayList<Square> Squares;
-    int squareCount = 5;
+    int squareCount = 2;
 
     public Particle_Container(PApplet main_) 
     {
@@ -31,7 +31,8 @@ public class Particle_Container {
     public void init()
     {
         //square = new Square(main);
-        rectangle = new Rectangle(main);
+        //rectangle = new Rectangle(main);
+        
         Squares = new ArrayList();
         for(int i = 0; i < squareCount; i++)
         {
@@ -44,6 +45,11 @@ public class Particle_Container {
         main.background(0);
         display();
 
+        // for(int i = 0; i < squareCount; i++)
+        // {
+        //     Squares.get(i).draw();
+        // }
+
         //square.move();
 
         // square.spawn();
@@ -54,9 +60,9 @@ public class Particle_Container {
     {
         for(int i = 0; i < Squares.size(); i++)
         {
-            Squares.get(i).display();
+            Squares.get(i).draw();
         }
-        rectangle.display();
+        //rectangle.display();
     }
     
 

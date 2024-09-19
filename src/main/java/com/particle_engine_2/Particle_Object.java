@@ -28,6 +28,12 @@ public class Particle_Object {
         alphaValue = a;
     }
 
+    void draw()
+    {
+        //main.fill(color);
+        //main.ellipse(x, x, size, size);
+        //move();
+    }
     
     //displays all the particle objects
     // void display()
@@ -48,14 +54,14 @@ public class Particle_Object {
         x = main.random(main.width);
         y = main.random(main.height);
 
-        xVel = main.random(-1,1);
-        yVel = main.random(-1,1);
+        xVel = main.random(-10,10);
+        yVel = main.random(-10,10);
     }
 
     void move()
     {
         y += yVel; // equation to make the ball move in the Y axis and in the correct direction.
-        //x += xVel; // equation to make the ball move in the X axis and in the correct direction.
+        x += xVel; // equation to make the ball move in the X axis and in the correct direction.
 
         if(y > main.height) //if the value of the ball on the Y axis is greater than
         {                   //the bottom of the screen value, then the ball will change directions.
@@ -67,15 +73,15 @@ public class Particle_Object {
             yVel = yVel * -1;
         }
 
-        // if(x > main.height) //if the value of the ball on the X axis is greater than
-        // {                   //the bottom of the screen value, then the ball will change directions.
-        //     x_direction = -1;
-        // }
+        if(x > main.height) //if the value of the ball on the X axis is greater than
+        {                   //the bottom of the screen value, then the ball will change directions.
+            xVel = xVel * -1;
+        }
 
-        // if(x < 0) //if the value of the ball on the X axis is greater than
-        // {        //the top of the screen value then, the ball will change directions.
-        //     x_direction = 1;
-        // }
+        if(x < 0) //if the value of the ball on the X axis is greater than
+        {        //the top of the screen value then, the ball will change directions.
+            xVel = xVel * -1;
+        }
 
     }
 
