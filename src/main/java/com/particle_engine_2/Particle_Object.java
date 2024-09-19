@@ -17,13 +17,15 @@ public class Particle_Object {
     float xVel, yVel; //velocity of the Particle Object
     float size; //size of the Particle Object
     boolean hit; // if the Particle Object is hit
+    int alphaValue; //value that changes the Particle Objects opacity. 
 
     //initializes everything
-    Particle_Object(PApplet main_, float size_, int color_)
+    Particle_Object(PApplet main_, float size_, int color_, int a)
     {
         main = main_;
         size = size_;
         color = color_;
+        alphaValue = a;
     }
 
     
@@ -46,8 +48,35 @@ public class Particle_Object {
         x = main.random(main.width);
         y = main.random(main.height);
 
-        xVel = main.random(-10,10);
-        yVel = main.random(-10,10);
+        xVel = main.random(-1,1);
+        yVel = main.random(-1,1);
+    }
+
+    void move()
+    {
+        y += yVel; // equation to make the ball move in the Y axis and in the correct direction.
+        //x += xVel; // equation to make the ball move in the X axis and in the correct direction.
+
+        if(y > main.height) //if the value of the ball on the Y axis is greater than
+        {                   //the bottom of the screen value, then the ball will change directions.
+            yVel = yVel * -1;
+        }
+
+        if(y < 0) //if the value of the ball on the Y axis is greater than
+        {        //the top of the screen value then, the ball will change directions.
+            yVel = yVel * -1;
+        }
+
+        // if(x > main.height) //if the value of the ball on the X axis is greater than
+        // {                   //the bottom of the screen value, then the ball will change directions.
+        //     x_direction = -1;
+        // }
+
+        // if(x < 0) //if the value of the ball on the X axis is greater than
+        // {        //the top of the screen value then, the ball will change directions.
+        //     x_direction = 1;
+        // }
+
     }
 
     float getX()

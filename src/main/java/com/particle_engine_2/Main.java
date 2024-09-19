@@ -51,17 +51,17 @@ public class Main extends PApplet {
      * This is the mousePressed method. 
      * When the mouse is pressed, the objects move in the opposite direction.
      */
-    public void mousePressed()
-    {
-       // balls.mousePressed();
-    }
+    // public void mousePressed()
+    // {
+    //    balls.mousePressed();
+    // }
 
     /*
      * This is the mouseDragged method. 
      * When the mouse is dragged, the opacity of the objects all change. 
      */
-    public void mouseDragged()
-    {
-            //balls.mouseDragged();
-    }
+    // public void mouseDragged()
+    // {
+    //         balls.mouseDragged();
+    // }
 }

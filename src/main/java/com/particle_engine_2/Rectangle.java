@@ -13,7 +13,7 @@
      
     Rectangle(PApplet main_)
      {
-         super(main_, 45, main_.color(main_.random(255),main_.random(255),main_.random(255)));
+         super(main_, 45, main_.color(main_.random(255),main_.random(255),main_.random(255)), 255);
          x = main.random(main.width);
          y = main.random(main.width);
      }
@@ -29,6 +29,18 @@
          main.fill(color);
          main.rect(x, x, size*2, size);
      }
+
+    //  void spawn()
+    // {
+    //     x = main.random(main.width);
+    //     y = main.random(main.height);
+
+    //     xVel = main.random(-1,1);
+    //     yVel = main.random(-1,1);
+
+    //     main.fill(color);
+    //     main.rect(x, x, size*2, size);
+    // }
  
  }
  

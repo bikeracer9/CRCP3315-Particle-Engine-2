@@ -6,31 +6,58 @@
  */
 package com.particle_engine_2;
 
+import java.util.ArrayList;
+
 import processing.core.PApplet;
 
 public class Particle_Container {
     PApplet main; //the main class, which has all the processing functionality.
 
     //Particle_Object particle;//testing the superclass
-    Square square; //testing the square object.
+    //Square square; //testing the square object.
     Rectangle rectangle; //testing the rectangle object
+
+    ArrayList<Square> Squares;
+    int squareCount = 5;
 
     public Particle_Container(PApplet main_) 
     {
         main = main_;
         //particle = new Particle_Object(main_, 20, main.color(0,255,0));
         //particle.spawn(); //locate is somewhere
-        square = new Square(main_);
+        init();
+    }
+
+    public void init()
+    {
+        //square = new Square(main);
         rectangle = new Rectangle(main);
+        Squares = new ArrayList();
+        for(int i = 0; i < squareCount; i++)
+        {
+            Squares.add( new Square(main) );
+        }
     }
 
     public void draw()
     {
         main.background(0);
-        square.display();
-        rectangle.display();
+        display();
+
+        //square.move();
+
+        // square.spawn();
+        // rectangle.spawn();
     }
 
+    public void display()
+    {
+        for(int i = 0; i < Squares.size(); i++)
+        {
+            Squares.get(i).display();
+        }
+        rectangle.display();
+    }
     
 
 }
