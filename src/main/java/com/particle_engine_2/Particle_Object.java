@@ -63,7 +63,7 @@ public class Particle_Object {
         y += yVel; // equation to make the ball move in the Y axis and in the correct direction.
         x += xVel; // equation to make the ball move in the X axis and in the correct direction.
 
-        if(y > main.height) //if the value of the ball on the Y axis is greater than
+        if(y > (main.height - size/2)) //if the value of the ball on the Y axis is greater than
         {                   //the bottom of the screen value, then the ball will change directions.
             yVel = yVel * -1;
         }
@@ -73,13 +73,13 @@ public class Particle_Object {
             yVel = yVel * -1;
         }
 
-        if(x > main.height) //if the value of the ball on the X axis is greater than
-        {                   //the bottom of the screen value, then the ball will change directions.
+        if(x > (main.width - size/2)) //if the value of the ball on the X axis is greater than
+        {                   //the right of the screen value, then the ball will change directions.
             xVel = xVel * -1;
         }
 
-        if(x < 0) //if the value of the ball on the X axis is greater than
-        {        //the top of the screen value then, the ball will change directions.
+        if(x < (0 + size/2)) //if the value of the ball on the X axis is greater than
+        {        //the left of the screen value then, the ball will change directions.
             xVel = xVel * -1;
         }
 

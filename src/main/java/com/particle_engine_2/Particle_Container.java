@@ -18,7 +18,13 @@ public class Particle_Container {
     //Rectangle rectangle; //testing the rectangle object
 
     ArrayList<Square> Squares;
-    int squareCount = 2;
+    int squareCount = 1;
+
+    ArrayList<Rectangle> Rectangles;
+    int rectCount = 1;
+
+    ArrayList<Circle> Circles;
+    int circleCount = 5;
 
     public Particle_Container(PApplet main_) 
     {
@@ -34,10 +40,26 @@ public class Particle_Container {
         //rectangle = new Rectangle(main);
         
         Squares = new ArrayList();
+        Rectangles = new ArrayList();
+        Circles = new ArrayList();
+
         for(int i = 0; i < squareCount; i++)
         {
             Squares.add( new Square(main) );
+            
         }
+       
+        for(int i = 0; i < rectCount; i++)
+        {
+            Rectangles.add( new Rectangle(main) );
+        }
+
+        for(int i = 0; i < circleCount; i++)
+        {
+            Circles.add( new Circle(main) );
+        }
+        
+
     }
 
     public void draw()
@@ -61,8 +83,19 @@ public class Particle_Container {
         for(int i = 0; i < Squares.size(); i++)
         {
             Squares.get(i).draw();
+            
         }
-        //rectangle.display();
+
+        for(int i = 0; i < Rectangles.size(); i++)
+        {
+            Rectangles.get(i).draw();
+        }
+
+        for(int i = 0; i < circleCount; i++)
+        {
+            Circles.get(i).draw();
+        }
+
     }
     
 
