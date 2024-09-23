@@ -105,14 +105,10 @@ public class Ball {
 
     /*
     * This function is the reverseDirection method,
-    * It is called in the Balls class in mousePressed(), 
     * and it changes the direction of the balls when the mouse is pressed.  
     */
     void reverseDir()
     {
-        // xVel *= -1;
-        // yVel *= -1;
-
         y_direction *= -1;
         x_direction *= -1;
     }

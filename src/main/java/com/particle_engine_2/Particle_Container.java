@@ -13,32 +13,29 @@ import processing.core.PApplet;
 public class Particle_Container {
     PApplet main; //the main class, which has all the processing functionality.
 
-    //Particle_Object particle;//testing the superclass
-    //Square square; //testing the square object.
-    //Rectangle rectangle; //testing the rectangle object
-
+    /*
+     * Below are all the ArrayLists for each of the different objects.
+     */
     ArrayList<Square> Squares;
-    int squareCount = 1;
+    int squareCount = 8;
 
     ArrayList<Rectangle> Rectangles;
-    int rectCount = 1;
+    int rectCount = 5;
 
     ArrayList<Circle> Circles;
-    int circleCount = 5;
+    int circleCount = 7;
 
     public Particle_Container(PApplet main_) 
     {
         main = main_;
-        //particle = new Particle_Object(main_, 20, main.color(0,255,0));
-        //particle.spawn(); //locate is somewhere
-        init();
+        init(); //initialize all the objects
     }
 
+/*
+ * This function initializes all the objects in the code.
+ */
     public void init()
-    {
-        //square = new Square(main);
-        //rectangle = new Rectangle(main);
-        
+    {    
         Squares = new ArrayList();
         Rectangles = new ArrayList();
         Circles = new ArrayList();
@@ -46,7 +43,6 @@ public class Particle_Container {
         for(int i = 0; i < squareCount; i++)
         {
             Squares.add( new Square(main) );
-            
         }
        
         for(int i = 0; i < rectCount; i++)
@@ -58,28 +54,26 @@ public class Particle_Container {
         {
             Circles.add( new Circle(main) );
         }
-        
 
     }
 
+    /*
+     * This is the draw function, it calls other functions to make the code cleaner and easier to read.
+     */
     public void draw()
     {
-        main.background(0);
-        display();
-
-        // for(int i = 0; i < squareCount; i++)
-        // {
-        //     Squares.get(i).draw();
-        // }
-
-        //square.move();
-
-        // square.spawn();
-        // rectangle.spawn();
+        main.background(0); //draw the background
+        display(); //display all objects
+        collisions(); //check collisions btwn circles
     }
 
+    /*
+     * This is the function that draws (displays) all the objects.
+     */
     public void display()
     {
+        main.rectMode(3);
+        main.noStroke();
         for(int i = 0; i < Squares.size(); i++)
         {
             Squares.get(i).draw();
@@ -91,12 +85,56 @@ public class Particle_Container {
             Rectangles.get(i).draw();
         }
 
-        for(int i = 0; i < circleCount; i++)
+        for(int i = 0; i < Circles.size(); i++)
         {
             Circles.get(i).draw();
         }
 
     }
     
+    /*
+     * This is the collision function for all of the Circles.
+     * If the boolean of "isColliding" = true & if the circle in the first loop is NOT the same as the one in the second loop, then make the circles reverse direction.
+     */
+    public void collisions()
+    {
+        for(int i = 0; i < Circles.size(); i++)
+        {
+            for(int j = 0; j < Circles.size(); j++)
+            {
+                if (Circles.get(i).isColliding(Circles.get(j)) && Circles.get(i) != Circles.get(j) )
+                {
+                    Circles.get(i).reverseDir();
+                }
+            }
+        }
+    }
+
+    void mouseDragged()
+    {
+
+    }
+
+    /*
+     * This is the mousePressed function
+     * It calls all the subclasses mousePressed functions and sets all the objects to do whatever is in that function.
+     */
+    void mousePressed()
+    {
+        for(int i = 0; i < Circles.size(); i++)
+        {
+            Circles.get(i).mousePressed();
+        }
+
+        for(int i = 0; i < Squares.size(); i++)
+        {
+            Squares.get(i).mousePressed();
+        }
+
+        for(int i = 0; i < Rectangles.size(); i++)
+        {
+            Rectangles.get(i).mousePressed();
+        }
+    }
 
 }

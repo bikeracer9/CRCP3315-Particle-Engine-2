@@ -16,8 +16,8 @@ public class Particle_Object {
     int color; //color of the Particle Object
     float xVel, yVel; //velocity of the Particle Object
     float size; //size of the Particle Object
-    boolean hit; // if the Particle Object is hit
     int alphaValue; //value that changes the Particle Objects opacity. 
+    //float x_direction, y_direction;
 
     //initializes everything
     Particle_Object(PApplet main_, float size_, int color_, int a)
@@ -26,29 +26,11 @@ public class Particle_Object {
         size = size_;
         color = color_;
         alphaValue = a;
-    }
+    }    
 
-    void draw()
-    {
-        //main.fill(color);
-        //main.ellipse(x, x, size, size);
-        //move();
-    }
-    
-    //displays all the particle objects
-    // void display()
-    // {
-    //     main.fill(color);
-    //     main.ellipse(x, x, size, size);
-    // }
-
-    //checks to see if there was a collision
-    boolean collision(Particle_Object particle)
-    {
-        float distance = PApplet.dist(x,y, particle.getX(), particle.getY());
-        return (distance < (size/2 + particle.getSize()/2));
-    }
-
+    /*
+    *  This method gives each particle an x,y, and velocity.
+    */
     void spawn()
     {
         x = main.random(main.width);
@@ -58,6 +40,18 @@ public class Particle_Object {
         yVel = main.random(-10,10);
     }
 
+    /*
+    *  This method reverses the direction of the particles.
+    */
+    public void reverseDir() 
+    {
+        xVel *= -1;
+        yVel *= -1;
+    }
+
+    /*
+    *  This method makes the object move, and checks to see if the object goes off the screen.
+    */
     void move()
     {
         y += yVel; // equation to make the ball move in the Y axis and in the correct direction.
@@ -82,21 +76,38 @@ public class Particle_Object {
         {        //the left of the screen value then, the ball will change directions.
             xVel = xVel * -1;
         }
-
     }
 
+    /*
+    *  This is the getter method to get the value of an object's X value 
+    */
     float getX()
     {
         return x;
     }
 
+    /*
+    *  This is the getter method to get the value of an object's Y value 
+    */
     float getY()
     {
         return y;
     }
 
+    /*
+    *  This is the getter method to get the value of an object's size. 
+    */
     float getSize()
     {
         return size;
+    }
+
+    /*
+    *  This is a method to see if two circles are colliding with one another.
+    */
+    boolean isColliding(Circle object)
+    {
+        float distance = PApplet.dist(x, y, object.getX(), object.getY());
+        return (distance < (size/2 + object.getSize()/2));
     }
 }

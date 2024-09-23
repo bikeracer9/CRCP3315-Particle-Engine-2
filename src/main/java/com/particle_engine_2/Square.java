@@ -40,48 +40,9 @@ public class Square extends Particle_Object {
         super.move();
     }
 
-    /*
-    void move()
+    void mousePressed()
     {
-        System.out.println("hello");
-        y += yVel; // equation to make the ball move in the Y axis and in the correct direction.
-        //x += xVel; // equation to make the ball move in the X axis and in the correct direction.
-
-        if(y > main.height) //if the value of the ball on the Y axis is greater than
-        {                   //the bottom of the screen value, then the ball will change directions.
-            yVel = yVel * -1;
-        }
-
-        if(y < 0) //if the value of the ball on the Y axis is greater than
-        {        //the top of the screen value then, the ball will change directions.
-            yVel = yVel * -1;
-        }
-
-        // if(x > main.height) //if the value of the ball on the X axis is greater than
-        // {                   //the bottom of the screen value, then the ball will change directions.
-        //     x_direction = -1;
-        // }
-
-        // if(x < 0) //if the value of the ball on the X axis is greater than
-        // {        //the top of the screen value then, the ball will change directions.
-        //     x_direction = 1;
-        // }
-
+        color = main.color(main.random(255),main.random(255), main.random(255)); 
     }
-         */
-
-    // void spawn()
-    // {
-    //     x = main.random(main.width);
-    //     y = main.random(main.height);
-
-    //     xVel = main.random(-1,1);
-    //     yVel = main.random(-1,1);
-
-    //     main.fill(color);
-    //     main.rect(x, x, size, size);
-    // }
-
-    
 
 }

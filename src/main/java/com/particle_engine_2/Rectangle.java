@@ -16,43 +16,28 @@
          super(main_, 45, main_.color(main_.random(255),main_.random(255),main_.random(255)), 255);
          
          super.spawn();
-        //  x = main.random(main.width);
-        //  y = main.random(main.width);
      }
-     
-     void setLocation(float x_, float y_)
-     {
-         x = x_;
-         y = y_;
-     }
- 
-    //  void display()
-    //  {
-    //      main.fill(color);
-    //      main.rect(x, x, size*2, size);
-    //  }
 
+     /*
+     * This is the draw function for all the Rectangle objects
+     * It draws all the Rectangles.
+     */
      void draw()
      {
-        
         main.rectMode(3);
-        main.fill(color);
+        main.fill(color, alphaValue);
         main.rect(x, y, size*2, size);
-        main.ellipse(x, y, size*1/2, size*2);
+        main.ellipse(x, y, size*2/3, size*2);
         super.move();
      }
 
-    //  void spawn()
-    // {
-    //     x = main.random(main.width);
-    //     y = main.random(main.height);
-
-    //     xVel = main.random(-1,1);
-    //     yVel = main.random(-1,1);
-
-    //     main.fill(color);
-    //     main.rect(x, x, size*2, size);
-    // }
- 
+      /*
+     * This is the mousePressed function for all the Rectangle objects
+     * It changes the alpha value (making the objects transparent) when the mouse is clicked.
+     */
+     void mousePressed()
+     {
+         alphaValue = alphaValue - 20;
+     }
  }
  
