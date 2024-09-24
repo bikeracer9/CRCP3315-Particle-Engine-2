@@ -4,6 +4,16 @@
  * September 18th, 2024
  * This project uses OOP & Inheritance to create a particle engine.
  * This is the Main file.
+ * 
+ * Clicking the mouse:
+ *       Circle: Increases velocity of circles.
+ *       Square: Changes the color of the squares.
+ *       Rectangle: Makes the rectangles more transparent (decreases alpha value).
+ * 
+ * Keyboard functions:
+ *       Circle: 'W' = circle size increases; 'S' = circle size decreases
+ *       Square: 'S' = stop squares (set velocity to 0); 'D' = make squares move again
+ *       Rectangle: 'X' = change alpha value back to normal (255).
  */
 
 package com.particle_engine_2;

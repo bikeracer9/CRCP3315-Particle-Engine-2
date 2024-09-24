@@ -28,19 +28,6 @@ public class Circle extends Particle_Object {
         super.move();
     }
 
-    
-    // double getDistance(int x1, int y1,int x2,int y2)
-    // {
-    //     double xDistance = x2 - x1;
-    //     double yDistance = y2 - y1;
-    //     return Math.sqrt( (xDistance * xDistance) + (yDistance * yDistance) );
-    // }
-
-    // void mouseDragged()
-    // {
-    //     
-    // }
-
     /*
      * This is the mousePressed function for all the Circle objects
      * It makes the balls move faster based on a random number.
