@@ -41,7 +41,7 @@ public class Circle extends Particle_Object {
     //     
     // }
 
- /*
+    /*
      * This is the mousePressed function for all the Circle objects
      * It makes the balls move faster based on a random number.
      */
@@ -51,5 +51,4 @@ public class Circle extends Particle_Object {
         xVel += randomValue;
         yVel += randomValue;
     }
-
 }

@@ -65,6 +65,7 @@ public class Particle_Container {
         main.background(0); //draw the background
         display(); //display all objects
         collisions(); //check collisions btwn circles
+        keys(); //checks all the keyboard functions.
     }
 
     /*
@@ -110,9 +111,54 @@ public class Particle_Container {
         }
     }
 
-    void mouseDragged()
+    /*
+     * This function handles all of the keys pressed functions!
+     */
+    void keys() 
     {
+        if (main.keyPressed)
+        {
+            if( main.key == 'w' || main.key == 'W') //if 'W' is pressed, then do below...
+            {
+                for(int i = 0; i < Circles.size(); i++)
+                {
+                    Circles.get(i).makeBigger(); //changes the size of the circles to make them bigger.
+                }
+            }
 
+            if( main.key == 'e' || main.key == 'E') //if 'E' is pressed, then do below...
+            {
+                for(int i = 0; i < Circles.size(); i++)
+                {
+                    Circles.get(i).makeSmaller(); //changes the size of the circles to make them smaller.
+                }
+            }
+
+            if( main.key == 's' || main.key == 'S') //if 'S' is pressed, then do below...
+            {
+                for(int i = 0; i < Squares.size(); i++)
+                {
+                    Squares.get(i).stopVel(); //makes the Squares stop moving! 
+                }
+            }
+
+            if( main.key == 'd' || main.key == 'D') //if 'D' is pressed, then do below...
+            {
+                for(int i = 0; i < Squares.size(); i++)
+                {
+                    Squares.get(i).resetVel(); //changes the velocity of the Squares back to what it had been when the object was initialized
+                }
+            }
+
+            if( main.key == 'x' || main.key == 'X') //if 'X' is pressed, then do below...
+            {
+                for(int i = 0; i < Rectangles.size(); i++)
+                {
+                    Rectangles.get(i).resetAlpha(); //resets the alpha value of the Rectangle objects.
+                }
+            }
+
+        }
     }
 
     /*

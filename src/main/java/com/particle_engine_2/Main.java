@@ -13,7 +13,6 @@ import processing.core.PApplet;
 
 public class Main extends PApplet {
 
-    // Balls balls; //draws the simulation to the screen
     Particle_Container container; //controls the particles
 
     public static void main(String[] args) { //sets up processing
@@ -24,17 +23,15 @@ public class Main extends PApplet {
     public void settings()
     {
         size(800, 800);
-        //balls = new Balls(this);
         container = new Particle_Container(this);
     }
     
     /*
      * This is the setup function
-     * Changes the background color to black.
      */
     public void setup()
     {               
-        //balls.setup(); //calls the balls from the class into the main function
+        
     } 
 
     /*
@@ -44,7 +41,6 @@ public class Main extends PApplet {
     public void draw()
     {
         container.draw();
-       // balls.draw();
     }
 
     /*
@@ -55,13 +51,4 @@ public class Main extends PApplet {
     {
        container.mousePressed();
     }
-
-    /*
-     * This is the mouseDragged method. 
-     * When the mouse is dragged, the opacity of the objects all change. 
-     */
-    // public void mouseDragged()
-    // {
-    //         balls.mouseDragged();
-    // }
 }

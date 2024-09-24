@@ -5,7 +5,7 @@
  * This file inherits the superclass (the particle object) and draws a rectangle with a ellipse inside of it!
  */
 
- package com.particle_engine_2; //change to be a combination of a shape!
+ package com.particle_engine_2; 
 
  import processing.core.PApplet;
  
@@ -31,7 +31,7 @@
         super.move();
      }
 
-      /*
+     /*
      * This is the mousePressed function for all the Rectangle objects
      * It changes the alpha value (making the objects transparent) when the mouse is clicked.
      */

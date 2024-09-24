@@ -10,9 +10,7 @@ package com.particle_engine_2;
 import processing.core.PApplet;
 
 public class Square extends Particle_Object {
-
-    
-
+    //This is the Square Constructor, which calls the superclass
     Square(PApplet main_)
     {
         super(main_, 45, main_.color(main_.random(255),main_.random(255),main_.random(255)), 255);
@@ -26,13 +24,10 @@ public class Square extends Particle_Object {
         y = y_;
     }
 
-    // void display()
-    // {
-    //     main.fill(color);
-    //     main.rect(x, x, size, size);
-    //     move();
-    // }
-
+    /*
+     * This is the draw function for all the Squares objects
+     * It draws all the Squares.
+     */
     void draw()
     {
         main.fill(color);
@@ -40,6 +35,10 @@ public class Square extends Particle_Object {
         super.move();
     }
 
+    /*
+     * This is the mousePressed function for all the Squares objects
+     * It changes the color of the Squares, whenever the mouse is pressed.
+     */
     void mousePressed()
     {
         color = main.color(main.random(255),main.random(255), main.random(255)); 
